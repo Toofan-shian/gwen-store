@@ -63,7 +63,7 @@
 export default {
   data() {
     return {
-      drawer: true,
+      drawer: false,
       links: [
         {title: 'Home', route: '/', icon: 'mdi-home'},
         {title: 'Store', route: '/store', icon: 'mdi-store'},
