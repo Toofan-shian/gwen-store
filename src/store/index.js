@@ -18,10 +18,30 @@ export default new Vuex.Store({
   },
   mutations: {
     addToCart(state, payload) {
-      
+      const {productIdx, quantity} = payload;
+      const cartIdx = state.cart.findIndex(item => {
+        return item.productIdx = productIdx
+      })
+      if (cartIdx == -1) {
+        state.cart.push({productIdx, quantity})
+      } else {
+        state.cart[cartIdx].quantity += 1
+      }
+    },
+    updateSnackbar(state, setting) {
+      state.snackBar = {
+        ...state.snackBar,
+        ...setting
+      }
     }
   },
   actions: {
+    addToCart(context, payload) {
+      context.commit('addToCart', payload)
+    },
+    updateSnackbar(context, payload) {
+      context.commit('updateSnackbar', payload)
+    }
   },
   modules: {
   }

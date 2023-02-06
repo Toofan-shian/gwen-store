@@ -17,18 +17,20 @@
       </v-col>
     </v-row>
 
-
     <v-row>
       <v-col class="" lg="8" offset-lg="2" sm="10" offset-sm="1">
         <v-row>
           <v-col
-            v-for="product in this.$store.state.products.slice(0,3)"
+            v-for="(product, i) in this.$store.state.products.slice(0,3)"
             :key="product.name"
             class="d-flex justify-center"
             md="4"
+            
           >
             <VerticalProduct
               :product="product"
+              :addItemToCart="addItemToCart"
+              :i="i"
             />
           </v-col>
         </v-row>
@@ -38,26 +40,23 @@
 </template>
 
 <script>
+import { mapActions, mapMutations } from 'vuex';
 import VerticalProduct from '../cards/verticalProduct.vue';
 
 export default {
   components: {
     VerticalProduct,
   },
-  computed: {
-    printBreak() {
-      let name = this.$vuetify.breakpoint.name
-      return name
+  methods: {
+    ...mapActions(["addToCart", "updateSnackbar"]),
+    addItemToCart({productIdx, quantity = 1}) {
+      this.addToCart({productIdx, quantity})
+      this.updateSnackbar({show: true})
     }
   }
 }
 </script>
 
 <style scoped>
-.border {
-  border: 1px solid red;
-}
-.border-b {
-  border: 1px solid blue;
-}
+
 </style>
