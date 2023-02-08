@@ -1,22 +1,22 @@
 <template>
-  <v-container class="border">
+  <v-container class="border-b ">
     <v-row>
       <v-col
-        class="border"
-        sm="8"
-        md="5"
-        offset-md="2"
-        lg="4"
-        offset-lg="3"
+        class=""
+        sm="7"
+        md="6"
+        offset-md="1"
+        lg="6"
+        offset-lg="1"
       >
         <productList/>
       </v-col>
       <v-col
-        class="border"
-        sm="4"
-        md="3"
+        class=""
+        sm="5"
+        md="4"
       >
-        <checkoutBox/>
+        <checkoutBox class=""/>
       </v-col>
     </v-row>
   </v-container>

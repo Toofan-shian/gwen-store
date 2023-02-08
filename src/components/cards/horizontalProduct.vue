@@ -1,10 +1,11 @@
 <template>
-  <v-card class="" width="100%">
+  <v-card class="mx-4 my-2" width="100%" outlined>
     <div class="d-flex">
       <v-img
         :src="product.image"
         width="120"
         height="120"
+        max-width="120"
       ></v-img>
 
       <div class="d-flex flex-column ">
@@ -16,7 +17,9 @@
         </v-card-subtitle>
 
         <v-btn
-          color="error ml-4"
+          color="error"
+          class="ml-4"
+          text
           outlined
           small
         >

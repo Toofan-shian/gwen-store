@@ -2,6 +2,7 @@
   <v-card
     outlined
     class="pa-3"
+    
   >
     <v-cart-title >
       <h3 class="title mb-2">Payment Detais</h3>
@@ -27,16 +28,19 @@
       <h4 class="subtitle-1 font-weight-black">Total: ${{ total }}</h4>
     </v-card-text>
 
-    <v-card-actions>
-      <v-btn
-        outlined
-        color="success"
-        
-        
+    <v-btn
+      outlined
+      color="success"
+      max-width="100%"
+      to="/checkout"
+    >
+      <span
+        style="font-size: 0.80rem; padding: 4px; text-transform: capitalize;"
       >
-        Complete Checkout
-      </v-btn>
-    </v-card-actions>
+        Checkout
+      </span>
+    </v-btn>
+
   </v-card>
 </template>
 
