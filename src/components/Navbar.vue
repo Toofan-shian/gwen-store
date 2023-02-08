@@ -4,6 +4,7 @@
       <v-toolbar-title>
         Gwen-Shop
       </v-toolbar-title>
+      <span class="ml-8">{{ breakPointName }}</span>
 
       <v-spacer></v-spacer>
 
@@ -72,6 +73,9 @@ export default {
     }
   },
   computed: {
+    breakPointName() {
+      return this.$vuetify.breakpoint.name
+    },
     isXs() {
       let breakPoint = this.$vuetify.breakpoint.name;
       if (breakPoint == 'xs') {
