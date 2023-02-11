@@ -31,7 +31,7 @@ const routes = [
 },
 {
   name: 'thankYou',
-  path: 'thank-you',
+  path: '/thank-you',
   component: thankYou,
 }
 ]

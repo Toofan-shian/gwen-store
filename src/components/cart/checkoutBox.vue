@@ -1,12 +1,12 @@
 <template>
   <v-card
     outlined
-    class="pa-3"
+    class="pa-3 my-2"
     
   >
-    <v-cart-title >
+    <!-- <v-cart-title >
       <h3 class="title mb-2">Payment Detais</h3>
-    </v-cart-title>
+    </v-cart-title> -->
     <v-card-text>
 
       <span class="text-bold">Name</span>

@@ -17,14 +17,13 @@
         </v-card-subtitle>
 
         <v-btn
-          color="error"
-          class="ml-4"
+          class="pa-0 ml-7"
           text
-          outlined
           small
+          plain
+          icon
         >
-          <v-icon left>mdi-minus</v-icon>
-          remove from cart
+          remove
         </v-btn>
       </div>
     </div>
