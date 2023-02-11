@@ -1,8 +1,8 @@
 <template>
-  <v-container class="border-b">
+  <v-container class="">
     <v-row>
       <v-col
-        class="border"
+        class=""
         sm="8"
         offset-sm="2"
         

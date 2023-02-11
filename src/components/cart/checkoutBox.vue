@@ -1,46 +1,38 @@
 <template>
   <v-card
     outlined
-    class="pa-3 my-2"
+    class="pa-2 my-2"
     
   >
-    <!-- <v-cart-title >
-      <h3 class="title mb-2">Payment Detais</h3>
-    </v-cart-title> -->
     <v-card-text>
-
-      <span class="text-bold">Name</span>
-      <v-text-field
-        v-model="name"
-        outlined
-        clearable
+      <div
+        v-for="(value, key) in orderSummery"
+        :key="value"
       >
-      </v-text-field>
-      
-      <span>Email</span>
-      <v-text-field
-        v-model="email"
-        outlined
-        clearable
+        <v-row
+          class="justify-space-between mx-0 my-3 text-subtitle-1"
+        >
+          <span>{{ key }}</span>
+          <span>{{ value }}</span>
+        </v-row>
+        <v-divider width="100%"></v-divider>
+      </div>
+      <v-row
+        class="justify-space-between mx-0 my-3 text-subtitle-1 font-weight-black"
       >
-      </v-text-field>
-
-      <h4 class="subtitle-1 font-weight-black">Total: ${{ total }}</h4>
+        <span>Estimated Total</span>
+        <span>${{ total }}</span>
+      </v-row>
     </v-card-text>
-
-    <v-btn
-      outlined
-      color="success"
-      max-width="100%"
-      to="/checkout"
-    >
-      <span
-        style="font-size: 0.80rem; padding: 4px; text-transform: capitalize;"
+    <v-card-actions>
+      <v-btn
+        block
+        color="primary mb-2"
+        to="/checkout"
       >
         Checkout
-      </span>
-    </v-btn>
-
+      </v-btn>
+    </v-card-actions>
   </v-card>
 </template>
 
@@ -50,8 +42,11 @@ export default {
   data() {
     return {
       total: 380,
-      name: null,
-      email: null
+      orderSummery: {
+        SubTotal: `$${5000}`,
+        Shipping: 'Free',
+        Tax: '$0.00'
+      }
     }
   }
 }
